@@ -9,4 +9,19 @@ const fetchData = (apiEndPoint) => {
     .catch((error) => console.log(error));
 };
 
+const fetchDataAsync = async (apiEndPoint) => {
+  try {
+    const result = await fetch(apiEndPoint);
+    const data = await result.json();
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
+
+};
+
+
+
 fetchData(jsonTypicode);
+
+fetchDataAsync(jsonTypicode);
